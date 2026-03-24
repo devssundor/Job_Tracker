@@ -33,3 +33,49 @@ function stateChangeJobRender(){
     intJob.innerText = intJobCount;
     rejectJob.innerText = rejectJobCount;
 }
+
+function handleRender(currTab){
+    const jobContainer = document.getElementById('jobs');
+    jobContainer.innerHTML = '';
+
+    for( const job in jobs){
+        const currJob = jobs[job];
+
+        if( currTab === 'pending' || currJob.Status === currTab){
+            const jobCard = `
+            <div id=${job} class="card bg-base-100 card-md shadow-sm 
+            ${currJob.Status === "interview" ? 'border-l-4 border-green-400' : 
+                currJob.Status === "reject" ? 'border-l-4 border-red-400' :
+                    ''}">
+            <div class="card-body">
+                <div class="flex flex-row justify-between">
+                    <h2 class="card-title text-[#002C5C] font-semibold text-xl">
+                        ${currJob.Company}
+                    </h2>
+                    <button onClick="handleDelete('${job}')" class="btn">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+                <p class="text-[#64748B]">${currJob.Role}</p>
+                <p class="my-5 text-[#64748B] text-sm">
+                ${currJob.Location} • ${currJob.Time} • ${currJob.Salary}
+                </p>
+                <div class="mb-2 sts">
+                    ${currJob.Status === "interview" ? '<button class="btn btn-success">Interview</button>' : 
+                        currJob.Status === "reject" ? '<button class="btn btn-error">Rejected</button>' :
+                        ''}
+                </div>
+                <p>
+                ${currJob.Description}
+                </p>
+                <div class="card-actions mt-4">
+                <button onClick="handleInterview('${job}')" class="btn btn-outline btn-success">Interview</button>
+                <button onClick="handleReject('${job}')" class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+            </div>`;
+
+            jobContainer.innerHTML += jobCard;
+        }
+    }
+}
