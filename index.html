@@ -24,45 +24,62 @@
 
 
 </head>
-<body>
-    <!-- Header section  -->
-     <header class="">
-        <h1 class="text-3xl mb-5 font-bold text-[#002C5C]">Job Application Tracker</h1>
-        <div class="flex flex-row gap-4">
-            <div class="p-5 my-auto bg-base-100 shadow-sm rounded-md w-full text-center lg:text-left">
-                <h2 class="text-md font-medium text-[#323B49]">Total</h2>
-                <p id="total-amount" class="text-3xl font-bold text-[#002C5C]">0</p>
-            </div>
-            <div class="p-5 my-auto bg-base-100 shadow-sm rounded-md w-full text-center lg:text-left">
-                <h2 class="text-md font-medium text-[#323B49]">Interview</h2>
-                <p id="interview-amount" class="text-3xl font-bold text-[#002C5C]">0</p>
-            </div>
-            <div class="p-5 my-auto bg-base-100 shadow-sm rounded-md w-full text-center lg:text-left">
-                <h2 class="text-md font-medium text-[#323B49]">Rejected</h2>
-                <p id="rejected amount" class="text-3xl font-bold text-[#002C5C]">0</p>
-            </div>
-        </div>
-     </header>
 
-     <hr class="my-8 border-[#E6E7E9]">
 
-     <!-- Job section  -->
-      <section>
-        <div class="flex flex-row justify-between">
-            <h2 class="text-xl font-bold mb-5 text-[#002C5C]">
-                Available Jobs
-            </h2>
-            <p class="text-base font-medium text-[#647488]">
-                <span id="job-count">8</span>jobs
-            </p>
+  <body class="bg-[#F8FAFC] px-8 md:px-36 lg:px-60 py-14 mx-auto">
+    <!-- Stats Section -->
+    <section>
+      <h1 class="text-3xl text-[#002C5C] font-bold mb-5">
+        Job Application Tracker
+      </h1>
+      <div class="flex flex-row gap-4">
+        <div
+          class="bg-base-100 shadow-sm p-5 my-auto rounded-md w-full text-center lg:text-left"
+        >
+          <h2 class="text-md font-medium text-[#323B49]">Total</h2>
+          <p id="total-amount" class="text-3xl font-bold text-[#002C5C]"></p>
         </div>
-        <div>
-            <button id="all" onclick="" class="btn btn-primary">All</button>
-            <button id="int" onclick="" class="btn ">Interview</button>
-            <button id="reject" onclick="" class="btn ">Rejected</button>
+        <div
+          class="bg-base-100 shadow-sm p-5 my-auto rounded-md w-full text-center lg:text-left"
+        >
+          <h2 class="text-md font-medium text-[#323B49]">Interview</h2>
+          <p id="interview-amount" class="text-3xl font-bold text-green-600">
+            0
+          </p>
         </div>
-      </section>
+        <div
+          class="bg-base-100 shadow-sm p-5 my-auto rounded-md w-full text-center lg:text-left"
+        >
+          <h2 class="text-md font-medium text-[#323B49]">Rejected</h2>
+          <p id="rejected-amount" class="text-3xl font-bold text-red-600">0</p>
+        </div>
+      </div>
+    </section>
 
-    <script type="module" src="./script.js"></script>
-</body>
+    <hr class="my-8 border-[#E6E7E9]" />
+
+    <!-- Jobs Section -->
+    <section>
+      <div class="flex flex-row justify-between">
+        <h2 class="text-xl text-[#002C5C] font-bold mb-5">Available Jobs</h2>
+        <p class="text-base text-[#64748B] font-medium">
+          <span id="job-count">8</span> jobs
+        </p>
+      </div>
+      <div class="flex flex-row gap-2 mb-4">
+        <button id="all" onClick="tabChange('pending')" class="btn btn-primary">
+          All
+        </button>
+        <button id="int" onClick="tabChange('interview')" class="btn">
+          Interview
+        </button>
+        <button id="rjct" onClick="tabChange('reject')" class="btn">
+          Rejected
+        </button>
+      </div>
+      <div id="jobs" class="flex flex-col gap-4"></div>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
