@@ -89,4 +89,4 @@ export const jobs = {
         "Status": "pending",
         "Description": "Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.",
     },
-}
+};
