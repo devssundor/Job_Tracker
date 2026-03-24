@@ -1,4 +1,4 @@
-const jobs = {
+export const jobs = {
     "job1": {
         "Company": "Mobile First Corp",
         "Role": "React Native Developer",
