@@ -97,7 +97,7 @@ let rejctJobCount = 0;
 function noJobRender() {
     document.getElementById("jobs").innerHTML = `
         <div class="w-full bg-white rounded-sm flex flex-col gap-4 items-center text-center justify-center p-8 md:p-12 lg:p-28">
-            <img src="./assets/image.png" alt="error image">
+            <img src="jobs.png" alt="error image">
             <div class="flex flex-col gap-1">
                 <h2 class="text-xl text-[#002C5C] font-bold">No Jobs Available</h2>
                 <p class="text-xs md:text-sm lg:text-base">
